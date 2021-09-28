@@ -86,6 +86,8 @@
             <AppenderRef ref="Console"/>
         </Logger>
 
+        <Logger name="com.zaxxer.hikari" level="info"></Logger>
+
         <root level="debug">
             <appender-ref ref="Console"/>
             <appender-ref ref="Filelog"/>

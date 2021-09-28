@@ -33,3 +33,13 @@ spring:
       max-idle: 8
       #连接池中的最小空闲连接
       min-idle: 0
+
+#mybaits
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/test
+    username: root
+    password: 123456
+mybatis:
+    type-aliases-package: com.cn.wdy.demo.entity
+    mapperLocations: classpath:mappers/*.xml
