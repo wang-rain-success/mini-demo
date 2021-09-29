@@ -1,15 +1,20 @@
 package com.cn.wdy.demo.controller;
 
 
+import com.cn.wdy.demo.component.ResponseVo;
 import com.cn.wdy.demo.entity.User;
 import com.cn.wdy.demo.service.LoginService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+import javax.servlet.http.HttpServletRequest;
 
 @RestController
-@RequestMapping(value = "/login", produces = "application/json")
+@RequestMapping(value = "/user", produces = "application/json")
 public class loginController {
 
     Logger logger = LoggerFactory.getLogger(this.getClass());
@@ -18,15 +23,26 @@ public class loginController {
     private LoginService loginService;
 
     @RequestMapping(value = "/login")
-    public String login(@RequestParam String uname,
-                        @RequestParam String upassword
-    ) {
-        User  user = new User();
-        user.setUname(uname);
-        user.setUpassword(upassword);
+    public ResponseVo login(@RequestParam String uname, @RequestParam String upassword, HttpServletRequest request) {
+
+        //根据用户名和密码获取用户
+        User user = new User(uname, upassword);
         user = this.loginService.getUser(user);
-        logger.debug("登录账户====" + user);
-        return "hello world 8081";
+
+        ResponseVo responseBody = new ResponseVo();
+
+        if (user == null) {
+            responseBody.setMessage("用户名或者密码不正确");
+        } else {
+            logger.debug("登录账户====" + user);
+            request.getSession().setAttribute("user", user);
+        }
+        return responseBody;
+    }
+
+    @RequestMapping(value = "sayHello")
+    public ResponseVo sayHello(HttpServletRequest request){
+       return new ResponseVo();
     }
 
 }

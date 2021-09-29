@@ -1,6 +1,8 @@
 package com.cn.wdy.demo.entity;
 
-public class User {
+import java.io.Serializable;
+
+public class User implements Serializable {
 
     private String uname;
 
@@ -28,5 +30,10 @@ public class User {
                 "uname='" + uname + '\'' +
                 ", upassword='" + upassword + '\'' +
                 '}';
+    }
+
+    public User(String uname, String upassword) {
+        this.uname = uname;
+        this.upassword = upassword;
     }
 }
