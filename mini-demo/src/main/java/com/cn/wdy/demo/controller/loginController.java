@@ -22,6 +22,9 @@ public class loginController {
     @Autowired
     private LoginService loginService;
 
+//    @NacosValue(value = "${USER_NAME}", autoRefreshed = true)
+    private String username;
+
     @RequestMapping(value = "/login")
     public ResponseVo login(@RequestParam String uname, @RequestParam String upassword, HttpServletRequest request) {
 
@@ -41,8 +44,8 @@ public class loginController {
     }
 
     @RequestMapping(value = "sayHello")
-    public ResponseVo sayHello(HttpServletRequest request){
-       return new ResponseVo();
+    public ResponseVo sayHello(HttpServletRequest request) {
+        return new ResponseVo();
     }
 
 }
