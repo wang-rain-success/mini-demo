@@ -1,9 +1,9 @@
-package com.cn.wdy.demo.controller;
+package demo.controller;
 
 
 import com.cn.wdy.demo.component.ResponseVo;
 import com.cn.wdy.demo.entity.User;
-import com.cn.wdy.demo.service.LoginService;
+import demo.service.LoginService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

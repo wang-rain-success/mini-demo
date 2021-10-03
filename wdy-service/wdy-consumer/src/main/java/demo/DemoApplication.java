@@ -1,4 +1,4 @@
-package com.cn.wdy.demo;
+package demo;
 
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;

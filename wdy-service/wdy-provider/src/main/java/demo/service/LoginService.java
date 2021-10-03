@@ -1,4 +1,4 @@
-package com.cn.wdy.demo.service;
+package demo.service;
 
 
 import com.cn.wdy.demo.dao.LoginDao;

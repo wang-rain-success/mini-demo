@@ -1,4 +1,4 @@
-package com.cn.wdy.demo;
+package demo;
 
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
@@ -8,7 +8,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @MapperScan(basePackages = "com.cn.wdy.demo.dao")
 //@NacosPropertySource(dataId = "wdy-demo",groupId = "wdy-demo",autoRefreshed = true)
 public class DemoApplication {
-
 
     public static void main(String[] args) {
 

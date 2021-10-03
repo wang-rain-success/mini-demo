@@ -1,4 +1,4 @@
-package com.cn.wdy.demo.dao;
+package demo.dao;
 
 import com.cn.wdy.demo.entity.User;
 import org.apache.ibatis.annotations.Mapper;

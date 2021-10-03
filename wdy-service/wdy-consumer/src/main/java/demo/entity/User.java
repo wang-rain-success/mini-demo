@@ -1,4 +1,4 @@
-package com.cn.wdy.demo.entity;
+package demo.entity;
 
 import java.io.Serializable;
 
